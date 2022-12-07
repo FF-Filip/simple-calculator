@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+    <style>
+
+        .kalkulator{
+            border: 2px solid black;
+            width: min-content;
+            margin: 30px auto;
+            padding: 20px 20px 20px 20px;
+            background-color: rgb(248,248,255);
+        }
+
+        #opcje{
+            width: 22px;
+            margin-right: 5px;
+        }
+        #opcjeostatnia{
+            width: 50px;
+            margin-left: 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="kalkulator">
+
+        <div id="wejscie">
+
+                <input type="text" id="liczbaA" placeholder="a"><br><br>
+
+                <button id="opcje" onClick="dodawanie()">+</button>
+                <button id="opcje" onClick="odejmowanie()">-</button>
+                <button id="opcje" onClick="mnozenie()">*</button>
+                <button id="opcje" onClick="dzielenie()">/</button>
+                <button id="opcjeostatnia" onClick="modulo()">Mod</button><br><br>
+
+                <input type="text" id="liczbaB" placeholder="b"><br><br>
+        </div>
+                <input type="text" id="wyjscie" placeholder="wynik">
+
+    </div>
+
+    <script>
+
+        var a = document.getElementById("liczbaA");
+        var b = document.getElementById("liczbaB");
+        var output = document.getElementById("wyjscie");
+
+        function dodawanie()
+        {
+
+            var suma = parseFloat(a.value)+parseFloat(b.value);
+            output.value=suma;
+        }
+
+        function odejmowanie()
+        {
+
+            var roznica = parseFloat(a.value)-parseFloat(b.value);
+            output.value=roznica;
+        }
+
+        function mnozenie()
+        {
+
+            var iloczyn = parseFloat(a.value)*parseFloat(b.value);
+            output.value=iloczyn;
+        }
+
+        function dzielenie()
+        {
+
+            var iloraz = parseFloat(a.value)/parseFloat(b.value);
+            output.value=iloraz;
+        }
+
+        function modulo()
+        {
+            var reszta = parseFloat(a.value)%parseFloat(b.value);
+            output.value=reszta;
+        }
+
+    </script>
+
+</body>
+
+</html>
